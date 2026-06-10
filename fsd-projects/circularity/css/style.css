@@ -8,17 +8,18 @@
     font-weight: bold;
     transition: all 0.3s ease;
     position: relative;
+    background-color: #000;
 }
 
 .game-mode-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgb(255, 0, 0);
 }
 
 .game-mode-btn.selected {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255,215,0,0.6);
-    border: 2px solid #FFD700;
+    box-shadow: 0 0 15px rgb(255, 0, 0);
+    border: 2px solid #000000;
 }
 
 .game-mode-btn.selected::after {
@@ -26,8 +27,8 @@
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #FFD700;
-    color: black;
+    background: #000000;
+    color: rgb(25, 0, 255);
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -39,11 +40,11 @@
 }
 
 #singlePlayerBtn {
-    background: #00FF00;
-    color: black;
+    background: #960000;
+    color: rgb(0, 0, 0);
 }
 
 #hostGameBtn {
-    background: #0080FF;
-    color: white;
+    background: #000000;
+    color: rgb(145, 0, 0);
 }

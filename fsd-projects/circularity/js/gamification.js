@@ -111,7 +111,7 @@ var Gamification = (function () {
 
   // Create player 1 (always green, uses WASD)
   function createPlayer1() {
-    player1 = draw.randomCircleInArea(canvas, true, true, "#00FF00", 3);
+    player1 = draw.randomCircleInArea(canvas, true, true, "#000000", 3);
     player1.radius = 15;
     player1.scaleX = player1.scaleY = 1.5;
 
@@ -133,7 +133,7 @@ var Gamification = (function () {
     view.addChild(player1);
 
     // Add tooltip to identify player 1
-    addPlayerTooltip(player1, "P1", "#00FF00");
+    addPlayerTooltip(player1, "P1", "#000000");
 
     // Add temporary pointer
     addTemporaryPointer(player1);
@@ -146,7 +146,7 @@ var Gamification = (function () {
   // Create player 2 (always blue, uses arrow keys)
   function createPlayer2() {
     // Create player2 using the same method as player1 but with blue color
-    player2 = draw.randomCircleInArea(canvas, true, true, "#0080FF", 3);
+    player2 = draw.randomCircleInArea(canvas, true, true, "#950000", 3);
     player2.radius = 15;
     player2.scaleX = player2.scaleY = 1.5;
 
@@ -169,7 +169,7 @@ var Gamification = (function () {
     view.addChild(player2);
 
     // Add tooltip to identify player 2
-    addPlayerTooltip(player2, "P2", "#0080FF");
+    addPlayerTooltip(player2, "P2", "#8a0000");
 
     // Reset score
     player2Score = 0;
