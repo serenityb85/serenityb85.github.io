@@ -53,7 +53,7 @@ var init = function (window) {
 
         // TODO 7 : Use a loop to create multiple circles
         for (var i = 0; i
-            < 50; i++) {
+            < 100; i++) {
         drawCircle();
             }
 

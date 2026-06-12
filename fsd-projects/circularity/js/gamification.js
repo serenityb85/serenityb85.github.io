@@ -332,16 +332,16 @@ var Gamification = (function () {
 
     // Check for WASD key presses
     if (keys["w"]) {
-      player1.y -= 3;
+      player1.y -= 0.1;
     }
     if (keys["s"]) {
-      player1.y += 3;
+      player1.y += 0.1;
     }
     if (keys["a"]) {
-      player1.x -= 3;
+      player1.x -= 0.1;
     }
     if (keys["d"]) {
-      player1.x += 3;
+      player1.x += 0.1;
     }
 
     // Keep player in bounds (wrap around screen)
@@ -354,16 +354,16 @@ var Gamification = (function () {
 
     // Check for Arrow key presses
     if (keys["arrowup"]) {
-      player2.y -= 3;
+      player2.y -= 0.1;
     }
     if (keys["arrowdown"]) {
-      player2.y += 3;
+      player2.y += 0.1;
     }
     if (keys["arrowleft"]) {
-      player2.x -= 3;
+      player2.x -= 0.1;
     }
     if (keys["arrowright"]) {
-      player2.x += 3;
+      player2.x += 0.1;
     }
 
     // Keep player in bounds (wrap around screen)
@@ -531,16 +531,16 @@ function updatePlayer1() {
 
   // Check for WASD key presses
   if (keys["w"]) {
-    player1.y -= 3;
+    player1.y -= 0.1;
   }
   if (keys["s"]) {
-    player1.y += 3;
+    player1.y += 0.1;
   }
   if (keys["a"]) {
-    player1.x -= 3;
+    player1.x -= 0.1;
   }
   if (keys["d"]) {
-    player1.x += 3;
+    player1.x += 0.1;
   }
 
   // Keep player in bounds (wrap around screen)
@@ -553,16 +553,16 @@ function updatePlayer2() {
 
   // Check for arrow key presses (using lowercase as set by keyboard handler)
   if (keys["arrowup"]) {
-    player2.y -= 3;
+    player2.y -= 0.1;
   }
   if (keys["arrowdown"]) {
-    player2.y += 3;
+    player2.y += 0.1;
   }
   if (keys["arrowleft"]) {
-    player2.x -= 3;
+    player2.x -= 0.1;
   }
   if (keys["arrowright"]) {
-    player2.x += 3;
+    player2.x += 0.1;
   }
 
   // Keep player in bounds (wrap around screen)
@@ -895,7 +895,7 @@ function endMultiplayerGame(reason) {
 
       if (
         circle &&
-        (Math.abs(circle.velocityX) > 0 || Math.abs(circle.velocityY) > 0)
+        (Math.abs(circle.velocityX) < 0 || Math.abs(circle.velocityY) > 0)
       ) {
         updatedCircles++;
       }
@@ -921,7 +921,7 @@ function showCountdown(callback) {
   
   var countdownDiv = document.createElement("div");
   countdownDiv.id = "countdown";
-  countdownDiv.style.cssText = "font-size: 48px; color: #FFD700; text-align: center;";
+  countdownDiv.style.cssText = "font-size: 48px; color: #970000; text-align: center;";
 
   if(gameModeDiv) gameModeDiv.style.display = 'none';
   instructions.style.display = 'block';
@@ -954,7 +954,7 @@ function showCountdown(callback) {
     var instructions = document.getElementById("instructions");
     if (instructions) {
       instructions.innerHTML = `
-                  <h2 style="margin: 0 0 10px 0; color: #0080FF;"> Local Multiplayer Ready!</h2>
+                  <h2 style="margin: 0 0 10px 0; color: #800000;"> Local Multiplayer Ready!</h2>
                   <div style="margin: 20px 0;">
                       <p style="margin: 10px 0; color: #FFD700; font-size: 18px; font-weight: bold;"> Two-Player Mode Activated!</p>
                       <p style="margin: 5px 0; color: #00FF00; font-size: 16px;"> Player 1: GREEN circle (WASD keys)</p>
@@ -982,7 +982,7 @@ function showCountdown(callback) {
     var statusDiv = document.createElement("div");
     statusDiv.id = "multiplayerStatus";
     var roleText = Multiplayer.isHost ? "HOST" : "GUEST";
-    var roleColor = Multiplayer.isHost ? "#00FF00" : "#0080FF";
+    var roleColor = Multiplayer.isHost ? "#000000" : "#8a0000";
 
     statusDiv.style.cssText = `
               position: absolute;
@@ -1002,7 +1002,7 @@ function showCountdown(callback) {
 
     statusDiv.innerHTML = `
               <div style="color: ${roleColor};"> MULTIPLAYER</div>
-              <div style="color: #FFD700; font-size: 12px;">${roleText} • Connected</div>
+              <div style="color: #000000; font-size: 12px;">${roleText} • Connected</div>
           `;
 
     // Add to the canvas container
